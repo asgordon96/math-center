@@ -25,8 +25,8 @@
       
       var sampleSVG = d3.select("#viz")
               .append("svg")
-              .attr("width", 1000)
-              .attr("height", 500);  
+              .attr("width", 2000)
+              .attr("height", 1000);  
       
 			var element = document.getElementById("mult");
 
@@ -147,18 +147,28 @@
 </head>
 
 <body onload="setup();">
-  <div id="viz"></div>
-	<p>Remember. Don't forget to FOIL. (First, Outside, Inside, Last)</p>
+  <div style="margin: 0 auto; width: 50%;">
+    <h2>Common Algebra Mistake: Forgetting to FOIL</h2>
+  	<p>Don't forget to FOIL. (First, Outside, Inside, Last)</p>
+    <p>Here is an example of an expression that requires FOIL. Slide the numbers and see what happens</p>
 
-	<p id="mult">
-		(<span data-var="a" class="TKAdjustableNumber" data-min="1" data-max="100"></span> + 
-     <span data-var="b" class="TKAdjustableNumber" data-min="1" data-max="100"></span>)
+  	<p id="mult">
+  		(<span data-var="a" class="TKAdjustableNumber" data-min="1" data-max="100"></span> + 
+       <span data-var="b" class="TKAdjustableNumber" data-min="1" data-max="100"></span>)
     
- 		(<span data-var="c" class="TKAdjustableNumber" data-min="1" data-max="100"></span> + 
-     <span data-var="d" class="TKAdjustableNumber" data-min="1" data-max="100"></span>) = 
+   		(<span data-var="c" class="TKAdjustableNumber" data-min="1" data-max="100"></span> + 
+       <span data-var="d" class="TKAdjustableNumber" data-min="1" data-max="100"></span>) = 
     
-		<span data-var="result"></span>
-	</p>
+       <span data-var="a"></span>*<span data-var="c"></span> + 
+       <span data-var="a"></span>*<span data-var="d"></span> + 
+       <span data-var="b"></span>*<span data-var="c"></span> +
+       <span data-var="b"></span>*<span data-var="d"></span> =
+    
+  		<span data-var="result"></span>
+  	</p>
+  
+    <div id="viz"></div>
+  </div>
 
 </body>
 
