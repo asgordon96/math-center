@@ -3,17 +3,17 @@
   <script src="http://d3js.org/d3.v3.min.js" charset="utf-8"></script>
   <script src="Tangle.js"></script>
   
-	<!-- TangleKit (optional) -->
-	<link rel="stylesheet" href="TangleKit.css" type="text/css">
-	<script type="text/javascript" src="mootools.js"></script>
-	<script type="text/javascript" src="sprintf.min.js"></script>
-	<script type="text/javascript" src="BVTouchable.js"></script>
-	<script type="text/javascript" src="TangleKit.js"></script>
+  <!-- TangleKit (optional) -->
+  <link rel="stylesheet" href="TangleKit.css" type="text/css">
+  <script type="text/javascript" src="mootools.js"></script>
+  <script type="text/javascript" src="sprintf.min.js"></script>
+  <script type="text/javascript" src="BVTouchable.js"></script>
+  <script type="text/javascript" src="TangleKit.js"></script>
 
 	<!-- example -->
 	<script type="text/javascript">
-
-		function setup () {
+  
+  function setup () {
       
       function center_x(rect) {
         return parseInt(rect.attr("x")) + parseInt(rect.attr("width")) / 2;
@@ -27,16 +27,16 @@
               .append("svg")
               .attr("width", 2000)
               .attr("height", 1000);  
+              
+      var element = document.getElementById("mult");
       
-			var element = document.getElementById("mult");
-
-			var tangle = new Tangle(element, {
-				initialize: function () {
+      var tangle = new Tangle(element, {
+        initialize: function () {
           this.scale = 30;
-          this.x_start = 30;
+          this.x_start = 40;
           this.y_start = 30;
           
-					this.a = 3;
+          this.a = 3;
           this.b = 5;
           this.c = 3;
           this.d = 5;
@@ -94,16 +94,16 @@
           this.textb = sampleSVG.append("text").attr("y", center_y(this.rect1)).attr("x", 15).text(this.c);
           this.textc = sampleSVG.append("text").attr("x", center_x(this.rect3)).attr("y", 15).text(this.b);
           this.textd = sampleSVG.append("text").attr("y", center_y(this.rect2)).attr("x", 15).text(this.d)
-
-				},
-				update: function () {
-					this.result = this.a*this.c + this.a*this.d + this.b*this.c + this.b*this.d;
+        
+        },
+        update: function () {
+          this.result = this.a*this.c + this.a*this.d + this.b*this.c + this.b*this.d;
           this.rect1.attr("width", this.a * this.scale);
           this.rect1.attr("height", this.c * this.scale);
           
           var x = this.a * this.scale + this.x_start;
           var y = this.c * this.scale + this.y_start;
-
+          
           this.rect2
             .attr("y", y)
             .attr("width", this.a * this.scale)
@@ -139,33 +139,33 @@
           this.last
           .attr("x", center_x(this.rect4)).attr("y", center_y(this.rect4))
           .text("Last: " + this.b + "*" + this.d);
-				}
-			});
-		}
-
-	</script>
+        }
+      });
+    }
+    
+  </script>
 </head>
 
 <body onload="setup();">
   <div style="margin: 0 auto; width: 50%;">
     <h2>Common Algebra Mistake: Forgetting to FOIL</h2>
-  	<p>Don't forget to FOIL. (First, Outside, Inside, Last)</p>
+    <p>Don't forget to FOIL. (First, Outside, Inside, Last)</p>
     <p>Here is an example of an expression that requires FOIL. Slide the numbers and see what happens</p>
-
-  	<p id="mult">
-  		(<span data-var="a" class="TKAdjustableNumber" data-min="1" data-max="100"></span> + 
-       <span data-var="b" class="TKAdjustableNumber" data-min="1" data-max="100"></span>)
     
-   		(<span data-var="c" class="TKAdjustableNumber" data-min="1" data-max="100"></span> + 
+    <p id="mult">
+      (<span data-var="a" class="TKAdjustableNumber" data-min="1" data-max="100"></span> + 
+       <span data-var="b" class="TKAdjustableNumber" data-min="1" data-max="100"></span>)
+       
+       (<span data-var="c" class="TKAdjustableNumber" data-min="1" data-max="100"></span> + 
        <span data-var="d" class="TKAdjustableNumber" data-min="1" data-max="100"></span>) = 
     
        <span data-var="a"></span>*<span data-var="c"></span> + 
        <span data-var="a"></span>*<span data-var="d"></span> + 
        <span data-var="b"></span>*<span data-var="c"></span> +
        <span data-var="b"></span>*<span data-var="d"></span> =
-    
-  		<span data-var="result"></span>
-  	</p>
+       
+       <span data-var="result"></span>
+    </p>
   
     <div id="viz"></div>
   </div>
