@@ -105,19 +105,19 @@
           var y = this.c * this.scale + this.y_start;
 
           this.rect2
-          .attr("y", y)
-          .attr("width", this.a * this.scale)
-          .attr("height", this.d * this.scale);
+            .attr("y", y)
+            .attr("width", this.a * this.scale)
+            .attr("height", this.d * this.scale);
           
           this.rect3
-          .attr("x", x)
-          .attr("width", this.b * this.scale)
-          .attr("height", this.c * this.scale);
+            .attr("x", x)
+            .attr("width", this.b * this.scale)
+            .attr("height", this.c * this.scale);
           
           this.rect4
-          .attr("x", x).attr("y", y)
-          .attr("width", this.b * this.scale)
-          .attr("height", this.d * this.scale);
+            .attr("x", x).attr("y", y)
+            .attr("width", this.b * this.scale)
+            .attr("height", this.d * this.scale);
           
           this.texta.attr("x", center_x(this.rect1)).attr("y", 15).text(this.a);
           this.textb.attr("y", center_y(this.rect1)).attr("x", 15).text(this.c);
