@@ -43,28 +43,28 @@
           this.result = 8 * 8;
           
           this.rect1 = sampleSVG.append("rect")
-          .style("fill", "blue")
+          .style("fill", "paleturquoise")
           .attr("x", this.x_start)
           .attr("y", this.y_start)
           .attr("width", this.a * this.scale)
           .attr("height", this.c * this.scale);
 
           this.rect2 = sampleSVG.append("rect")
-          .style("fill", "red")
+          .style("fill", "mistyrose")
           .attr("x", this.x_start)
           .attr("y", this.y_start + parseInt(this.rect1.attr("height")))
           .attr("width", this.a * this.scale)
           .attr("height", this.d * this.scale);
 
           this.rect3 = sampleSVG.append("rect")
-          .style("fill", "red")
+          .style("fill", "mistyrose")
           .attr("x", this.x_start + parseInt(this.rect1.attr("width")))
           .attr("y", this.y_start)
           .attr("width", this.b * this.scale)
           .attr("height", this.c * this.scale);
           
           this.rect4 = sampleSVG.append("rect")
-          .style("fill", "blue")
+          .style("fill", "paleturquoise")
           .attr("x", this.x_start + parseInt(this.rect1.attr("width")))
           .attr("y", this.y_start + parseInt(this.rect1.attr("height")))
           .attr("width", this.b * this.scale)
